@@ -1,8 +1,10 @@
 :root {
   --color-brand: #af2523;
   --color-brand-light: #af252364;
+  --color-brand-secondary: #da8001;
   --color-primary-dark: #050301;
   --color-primary: #1b1b1b;
+  --color-secondary: #c7c4bd;
   --color-line: #a39092;
 }
 
@@ -32,12 +34,8 @@ a {
   color: var(--color-primary);
 }
 
-.btn {
-  border: 2px solid var(--color-primary);
-  font-size: 12px;
-  letter-spacing: 1.2;
-  padding: 10px 18px;
-  border: 2px solid var(--color-primary);
+main {
+  background-color: var(--color-secondary);
 }
 
 .container {
@@ -46,8 +44,36 @@ a {
   padding: 0 24px;
 }
 
+.btn {
+  border: 2px solid var(--color-primary);
+  font-size: 12px;
+  letter-spacing: 1.2;
+  padding: 10px 18px;
+  border: 2px solid var(--color-primary);
+}
+
+.grid {
+  display: grid;
+  grid-gap: 32px;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grid-2-column {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3-column {
+  grid-template-columns: repeat(3, auto);
+}
+
 .text-red {
   color: var(--color-brand);
+}
+
+.text-orange {
+  color: var(--color-brand-secondary);
 }
 
 .text-upper {
@@ -79,6 +105,7 @@ header {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 24px;
   letter-spacing: 0.24px;
+  text-decoration: none;
 }
 
 header a {
@@ -163,6 +190,24 @@ header a {
   display: flex;
   align-items: flex-end;
   min-height: 100vh;
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-secondary);
+  padding: 20px 0;
+}
+
+.footer-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 2.5;
+  color: var(--color-primary-dark);
+  text-transform: uppercase;
 }
 
 @media (max-width: 1024px) {
