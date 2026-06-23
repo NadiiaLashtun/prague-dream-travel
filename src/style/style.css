@@ -1,6 +1,6 @@
 :root {
   --color-brand: #af2523;
-  --color-brand-light: #af252364;
+  --color-brand-light: #af252342;
   --color-brand-secondary: #da8001;
   --color-primary-dark: #050301;
   --color-primary: #1b1b1b;
@@ -20,16 +20,15 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  line-height: 1.3;
+  font-size: 16px;
+  line-height: 1.6;
 
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
 }
 
 h1 {
   font-family: 'Bebas Neue', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 250px;
+  font-size: 220px;
   line-height: 0.85;
   letter-spacing: 2.5px;
   margin: 0;
@@ -38,18 +37,49 @@ h1 {
 }
 
 h2 {
-  color: var(--color-primary-dark);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 96px;
+  line-height: 1;
+  letter-spacing: 0.96px;
+  margin: 0;
 }
 
 h3 {
-  color: var(--color-brand);
   font-family: 'JetBrains Mono', monospace;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
   font-size: 12px;
   letter-spacing: 3.6px;
   text-transform: uppercase;
+  color: var(--color-brand);
+  margin: 0 0 12px;
+}
+
+h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  letter-spacing: 0.36px;
+  margin: 0;
+}
+
+h5 {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 7%;
+  color: var(--color-brand);
+  margin: 0 0 14px;
+}
+
+.title-red {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 72px;
+  line-height: 1;
+  letter-spacing: 0.72px;
+  color: var(--color-brand);
+  text-transform: capitalize;
 }
 
 a {
@@ -79,7 +109,8 @@ main {
   font-size: 12px;
   letter-spacing: 1.2;
   padding: 10px 18px;
-  border: 2px solid var(--color-primary);
+  border: 2px solid var(--color-secondary);
+  color: var(--color-title);
 }
 
 .grid {
@@ -91,11 +122,15 @@ main {
 }
 
 .grid-2-col {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, auto);
 }
 
 .grid-3-col {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, auto);
+}
+
+.grid--align-bottom {
+  align-items: end;
 }
 
 .text-red {
@@ -111,7 +146,8 @@ main {
 }
 
 .img-responsive {
-  max-width: 100%;
+  display: block;
+  width: 100%;
 }
 
 /* Header */
@@ -213,25 +249,30 @@ header a {
 /* Hero section*/
 .hero-section {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)),
     url('../img/bg.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: bottom;
   min-height: 100vh;
+  filter: sepia(0.4);
 }
 
 .hero-container {
-  display: flex;
-  align-items: flex-end;
   min-height: 100vh;
+  padding: 128px 0 60px;
+}
+
+.hero-subtitle {
+  font-weight: 700;
+  text-shadow: 0 0 20px var(--color-title);
 }
 
 .hero-description {
   font-family: 'Bebas Neue', sans-serif;
-  font-weight: 400;
-  font-style: normal;
   font-size: 24px;
-  letter-spacing: 0.24;
+  line-height: 1.33;
+  letter-spacing: 0.24px;
   max-width: 440px;
   color: var(--color-primary-light);
   text-shadow: 0 0 10px var(--color-primary);
@@ -240,7 +281,6 @@ header a {
 .hero-quote {
   position: relative;
   font-family: 'Instrument Serif', serif;
-  font-weight: 400;
   font-style: italic;
   font-size: 18px;
   line-height: 1.5;
@@ -248,7 +288,7 @@ header a {
   max-width: 384px;
   color: var(--color-primary-light);
   border-left: 1px solid var(--color-primary);
-  padding: 0 24px;
+  padding: 0 0 0 24px;
   text-align: left;
 }
 
@@ -270,12 +310,60 @@ header a {
 
 .hero-quote-author {
   font-family: 'JetBrains Mono', monospace;
-  font-weight: 400;
-  font-style: normal;
   font-size: 10px;
   line-height: 1.5;
   letter-spacing: 2.5px;
   text-transform: uppercase;
+}
+
+/* District */
+.district-subtitle {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 7%;
+}
+
+.district-description {
+  display: block;
+  /* grid-column: 3;
+  align-self: end; */
+}
+
+.district-grid-title {
+  margin-bottom: 60px;
+}
+
+.district-grid-body {
+  align-items: start;
+}
+
+.card {
+  position: relative;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.card-number {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 5px 8px;
+  border: 1px solid var(--color-line);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+.card-img {
+  margin-bottom: 20px;
+}
+
+.card:nth-child(2) {
+  margin-top: 48px;
+  align-self: end;
 }
 
 /* Footer */
@@ -286,9 +374,6 @@ footer {
 
 .footer-text {
   font-family: 'JetBrains Mono', monospace;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
   font-size: 10px;
   line-height: 1.5;
   letter-spacing: 2.5;
@@ -298,8 +383,13 @@ footer {
 
 @media (max-width: 1024px) {
   h1 {
-    font-size: 180px;
+    font-size: 160px;
   }
+
+  .hero-description {
+    font-size: 18px;
+  }
+
   .nav-menu {
     position: fixed;
     top: 100%;
@@ -315,6 +405,7 @@ footer {
     overflow-y: auto;
 
     background-color: var(--color-brand-light);
+    z-index: 10;
 
     transform: scaleY(0);
     transform-origin: top;
@@ -326,9 +417,18 @@ footer {
     pointer-events: none;
   }
 
+  .nav-menu a {
+    color: var(--color-title);
+  }
+
   .nav-menu.open {
     transform: scaleY(1);
     pointer-events: auto;
+  }
+
+  body:has(.nav-menu.open) main,
+  body:has(.nav-menu.open) footer {
+    filter: blur(8px) brightness(0.7);
   }
 
   .mobile-btn {
@@ -338,14 +438,37 @@ footer {
   .btn-guide {
     display: none;
   }
+
+  .hero-quote {
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 7%;
+    max-width: 300px;
+  }
 }
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 120px;
+    font-size: 90px;
   }
+
+  h2 {
+    font-size: 62px;
+  }
+
+  .section,
+  .hero-container {
+    padding: 60px 0;
+  }
+
   .grid {
     grid-template-columns: 1fr;
+    justify-items: center;
     text-align: center;
+    gap: 18px;
+  }
+
+  .district-description {
+    grid-column: auto;
   }
 }
